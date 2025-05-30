@@ -38,4 +38,4 @@ python main.py files\data1.csv files\data2.csv files\data3.csv --report payout -
    * значение — конфигурация отчёта: список колонок, опции группировки, форматирование и т.п.
 
 Пример с отчётом `payout` уже реализован:
-[См. в `settings.py`](https://github.com/jmblx/test-task/src/settings.py)
+[См. в `settings.py`](https://github.com/jmblx/test-task/blob/main/src/settings.py)
