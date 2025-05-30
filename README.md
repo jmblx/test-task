@@ -2,11 +2,13 @@
 ### Пример запуска с json:
 #### Linux
 ```shell
-python3 main.py test_data\data1.csv test_data\data2.csv test_data\data3.csv --report payout --output json
+cd src &&
+python3 main.py files\data1.csv files\data2.csv files\data3.csv --report payout --output json
 ```
 #### Win
 ```shell
-python main.py test_data\data1.csv test_data\data2.csv test_data\data3.csv --report payout --output json
+cd src
+python main.py files\data1.csv files\data2.csv files\data3.csv --report payout --output json
 ```
 ### Результат:
 ![json_output](json_output.png)
@@ -14,14 +16,26 @@ python main.py test_data\data1.csv test_data\data2.csv test_data\data3.csv --rep
 ### Пример запуска с console:
 #### Linux
 ```shell
-python3 main.py test_data\data1.csv test_data\data2.csv test_data\data3.csv --report payout --output console
+cd src &&
+python3 main.py files\data1.csv files\data2.csv files\data3.csv --report payout --output console
 ```
 #### Win
 ```shell
-python main.py test_data\data1.csv test_data\data2.csv test_data\data3.csv --report payout --output console
+cd src
+python main.py files\data1.csv files\data2.csv files\data3.csv --report payout --output console
 ```
 ### Результат:
 ![console_output](console_output.png)
-## Как добавить новый отчет?
-### Добавить его с описанием получаемых с ним колонок в файле settings.py в словарь REPORT_CONFIGS
-### В формате с названием как ключ, которое потом как аргумент при запуске передаем и самим конфигом в значении. [Пример с отчетом payout уже есть в настройках](https://github.com/jmblx/test-task/src/settings.py)
+
+## Добавление нового отчёта
+
+Чтобы добавить новый отчёт:
+
+1. Открой файл `settings.py`.
+2. В словарь `REPORT_CONFIGS` добавь новую запись:
+
+   * ключ — имя отчёта (используется в аргументе `--report` при запуске),
+   * значение — конфигурация отчёта: список колонок, опции группировки, форматирование и т.п.
+
+Пример с отчётом `payout` уже реализован:
+[См. в `settings.py`](https://github.com/jmblx/test-task/src/settings.py)
